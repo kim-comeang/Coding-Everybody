@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>javascript25~26 - 함수~매개변수와 인자</title>
+    </head>
+    <body>
+      <h1>function</h1>
+      <H2>Basic</H2>
+
+      <ul>
+        <script>
+          function two(){
+            document.write('<li>2</li>');
+            document.write('<li>2-1</li>');
+          }
+          document.write('<li>1</li>');
+          two();
+          document.write('<li>3</li>');
+          two();
+        </script>
+      </ul>
+
+      <h2>Parameter & Argument</h2>
+      <h3>매개변수(파라미터) & 인자(아규먼트)</h3>
+      <p>함수는 입력과 출력이라고 할수 있다. 그 입력에 해당되는것이 파라미터, 아규먼트 이다.</p>
+      <p>출력에 해당되는것은 리턴이라는 것과 관련이 있다. </p>
+
+      <script>
+        function onePlusOne(){
+          document.write(1+1 + '<br>');
+        }
+        onePlusOne();
+
+        function sum(left, right){  // left, right 라는 변수를 정의, 이 변수를 매개변수라고 부른다. // 파라미터
+          document.write(left + right + '<br>');
+        }
+        sum(2,3); // 함수로 전달하는 2, 3 의 값을 인자라고 부른다. // 아규먼트
+        sum(3,4);
+
+      </script>
+
+
+      <h2>Return</h2>
+    </body>
+</html>
