@@ -37,6 +37,10 @@
         function sum(left, right){  // left, right 라는 변수를 정의, 이 변수를 매개변수라고 부른다. // 파라미터
           document.write(left + right + '<br>');
         }
+        // 만약 색깔을 바꾼다면
+        function sum(left, right){
+          document.write('<div style="color:red">' + right + '</div><br>');
+        }
         sum(2,3); // 함수로 전달하는 2, 3 의 값을 인자라고 부른다. // 아규먼트
         sum(3,4);
 
@@ -44,5 +48,20 @@
 
 
       <h2>Return</h2>
+      
+      <h3>표현식 - 익스프레션</h3>
+      <p>1 + 1 = 2 > 숫자 2에대한 표현식</p>
+      <p>2 - 1 = 1 > 숫자 1에대한 표현식</p>
+      <p>1 === 1 = true > true에대한 표현식</p>
+      <p></p>
+
+      <script>
+        function sum2(left, right){
+          return left + right;
+        }
+        document.write(sum2(2, 3) + '<br>');
+        document.write('<div style="color:red;">' + sum2(2, 3) + '</div>');
+        document.write('<div style="font-size:3rem;">' + sum2(2, 3) + '</div>');
+      </script>
     </body>
 </html>
