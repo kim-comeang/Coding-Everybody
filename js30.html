@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript30~32 - 객체</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <p>배열이라는 도구는 정보를 담는 그릇이면서 동시에 정보가 순서대로 저장되는 특징이 있다.</p>
+    <p>순서 없이 정보를 저장하는것이 객체이다.</p>
+    <script>
+      var cower = ["aaa","bbb"];
+      console.log(cower[0]);    // "aaa"
+      console.log(cower[1]);    // "bbb"
+    </script>
+
+    <p>객체는 이름이 있는 정리정돈 상자라고 생각하면 된다.</p>
+    <p>아래는 객체의 기본적인것, 객체 생성법, 객체 리터럴 가져오는법, 객체 넣는법</p>
+    <script>
+      // 객체 리터럴 넣는 법
+      var cowerkers = {
+        // 객체를 넣는 법
+        // 이름         정보
+        "programmer": "egoing",
+        "designer": "leezche"
+      };
+      // 객체 리터럴 가져오는 법
+      document.write("programmer : " + cowerkers.programmer + "<br>");
+      document.write("designer : " + cowerkers.designer + "<br>");
+      // 객체를 추가하는 법
+      cowerkers.bookkeeper = "duru";
+      document.write("bookkeeper : " + cowerkers.bookkeeper + "<br>");
+      // 객체를 추가할때 띄어쓰기를 넣는 법    // 띄어쓰기를 넣으면 문법적으로 오류다.
+      cowerkers["data scientist"] = "teaho";  
+      
+      document.write("data scientist : " + cowerkers["data scientist"]);
+    </script>
+
+    <h2>이터레이트 - Iterate</h2>
+    <p>객체의 데이터를 순회하는 방법</p>
+    <script>
+      // cowerkers                           in   key
+      // cowerkers라는 변수가 가리키는 객체에 있는 키값을 가져오는 반복문이다.
+      for(var key in cowerkers) {
+        document.write(key + ' : ' + cowerkers[key] + "<br>");
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <p></p>
+    <script>
+      // function showAll(){};
+      // var showAll = function() {};
+      // 똑같은 함수 정의
+      cowerkers.showAll = function() {
+        for(var key in this) {
+          document.write(key + ' : ' + this[key] + "<br>");
+        }
+      };
+      // 객체에 소속된 함수 = 메소드
+      cowerkers.showAll();
+    </script>
+    <p>
+      객체에 소속된 함수는 메소드
+      객체에 소속된 변수는 프로퍼티
+    </p>
+  </body>
+</html>
