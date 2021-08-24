@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>내용 이해가 잘 안됨 - 암시적 타입 변환</p>
+    <p>- 예시 오류</p>
+    <p>x+"";</p>
+    <p>+x;</p>
+    <p>!!x;</p>
+    <script>
+        // 기수를 정하는 선택적 인자를 받는다. 이 인자들을 정의하지 않으면 기수를 10으로 변환 한다.
+        // 2~36까지의 값을 전달하면 해당 숫자를 기수로 변환한다.
+        var n = 17;
+        binary_string = n.toString(2);  // 2진수
+        // -> "10001"
+        octal_string = "0" + n.toString(8);     // 8진수
+        // -> "021"
+        hex_string = "0x" + n.toString(16);     // 16진수 인건가?
+        // -> "0x11"
+        // 잘 모르겠다.
+    </script>
+
+    <p>Number는 숫자를 문자열로 변환하는 세 가지 '메서드'를 정의한다.</p>
+
+    <ul>
+        <li>toFixed() - 소수점 이후 정의된 수와 문자열로 숫자를 변환. 지수 표기법 사용안함</li>
+        <li>toExponential() - 지수 표기법을 사용해 소수점 앞에 숫자 하나와 소수점 뒤에 지정된 만큼의 자릿수를 놓는 방식으로 숫자를 문자열로 변환.</li>
+        <li>toPrecision() -  정의한 유효 자릿수로 숫자를 문자열로 변환</li>
+        <li>유의할 점 - 세가지 메서드 모두 결과 문자열 내에서 나머지 숫자들을 적절히 반올림한다.</li>
+    </ul>
+    <script>
+        var nn = 123456.789;
+        nn.toFixed(0); // "123457"
+        nn.toFixed(2); // "123456.79"
+        nn.toFixed(5); // "123456.78900"
+        nn.toExponential(1); // "1.2e+5"
+        nn.toExponential(3); // "1.235e+5"
+        nn.toExponential(10); // "1.2345678900e+5"
+        nn.toPrecision(4); // "1.235e+5"
+        nn.toPrecision(7); // "123456.8"
+        nn.toPrecision(10); // "123456.7890"
+    </script>
+
+    <p>문자열을 Number() 변환 함수로 넘기면, 변환 함수는 문자열을 정수나 실수 리터럴로 해석할 것이다. </p>
+    <p>Number() 함수는 10진수 정수로만 동작하고 숫자 리터럴의 일부가 아닌 문자를 허용하지 않는다.</p>
+
+    <p>parseInt(), parseFloat() 함수는 숫자 리터럴의 일부가 아니어도 된다는 점에서 Number()보다 좀더 유연하게 동작한다.</p>
+    <p>parseInt(), parseFloat()는 Number()의 메서드가 아닌 전역 함수다.</p>
+
+    <p>parseInt()는 정수만 변환한다.</p>
+    <p>parseFloat()는 정수와 부동소수점 모두 변환할 수 있다.</p>
+
+
+
+
+
+</body>
+</html>
