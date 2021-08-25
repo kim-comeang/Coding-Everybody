@@ -1,0 +1,51 @@
+javascript 원시 타입 - number, string, boolean, undefined, null, symbol
+참조 타입 -  값이 아닌 객체가 들어가는 모든 데이터 타입이며 대표적으로 function, array, object, 정규 표현식 등이 있다.
+
+타입 체크
+var a = "1";            // "string"     o
+var b = 1;              // "number"     o
+var c = true;           // "boolean"    o
+var d = {};             // "object"     o
+var e = [];             // "object"     x
+var f = function(){};   // "function"   o
+var g = undefined;      // "undefined"  o
+var h = null;           // "object"     x
+
+typeof(a);  // "string"
+typeof(b);  // "number"
+typeof(c);  // "boolean"
+typeof(d);  // "object"
+typeof(e);  // "object"
+typeof(f);  // "function"
+typeof(g);  // "undefined"
+typeof(h);  // "object"
+
+
+배열, null이 object로 나오네~
+
+array는 isArray()로 검색 해야한다. boolean으로 값을 확인할 수 있다. (배열이 맞다면 true, 아니라면 false)
+배열은 객체의 특수한 한 형태이기 때문이다.
+Array.isArray(판별하고싶은 데이터) 형식으로 작성하면 된다.
+var a = [];
+var b = {};
+Array.isArray(a);   // true
+Array.isArray(b);   // false
+
+null이 object로 나오는 이유는 '버그'라고 한다. (자바스크립트 초기 버전의 버그 이렇게 쓰여진 기존 코드가 너무 많아 고칠 수 없다고 한다.)
+typeof()가 타입 검사를 동작할때 순서
+1. undefined인지 판별
+2. 객체인지 판별 (이때 객체에 속해있기 때문에 null을 object로 반환한다.)
+3. number, string, boolean 등을 검사한다.
+(명시적으로 null을 검사하지 않는다고 한다.)
+
+null타입 검사
+var a = null;
+a(null값이 들어간 변수) === null    // true
+
+일치 연산자로 검사를 할수 있다.
+
+
+참조 제거하기
+var object = Object();
+object = null; // null 값을 넣으면 참조 제거가 된다.
+
