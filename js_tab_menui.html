@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #content{
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px;
+    }
+    h1{
+      font-size: 30px;
+      line-height: 55px;
+      text-align: center;
+    }
+    ul{
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    ul li{
+      border: 1px solid #333;
+      text-align: center;
+    }
+    .tab_menu li{
+      width: 25%;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px
+    }
+    .tab_menu li a{
+      display: block;
+      color: #333;
+    }
+    .tab_menu li.active a{
+      background-color: #333;
+      color: #fff;
+    }
+    .tab_contents div{
+      display: none;
+      width: 100%;
+      height: 300px;
+      font-size: 40px;
+      line-height: 300px;
+      text-align: center;
+    }
+    .tab_contents div:first-child{
+      display: block;
+    }
+    #content01{
+      background-color: pink;
+    }
+    #content02{
+      background-color: skyblue
+    }
+    #content03{
+      background-color: gold;
+    }
+    #content04{
+      background-color: silver;
+    }
+  </style>
+
+  <div id="content">
+    <h1>탭메뉴</h1>
+    <ul class="tab_menu">
+        <li class="active"><a href="#content01" class="tab_btn">메뉴01</a></li>
+        <li><a href="#content02" class="tab_btn">메뉴02</a></li>
+        <li><a href="#content03" class="tab_btn">메뉴03</a></li>
+        <li><a href="#content04" class="tab_btn">메뉴04</a></li>
+    </ul>
+    <div class="tab_contents">
+        <div id="content01">콘텐츠01</div>
+        <div id="content02">콘텐츠02</div>
+        <div id="content03">콘텐츠03</div>
+        <div id="content04">콘텐츠04</div>
+    </div>
+  </div>
+
+  <script>
+    const tabBtn = document.querySelectorAll('.tab_menu li');
+    const tabContents = document.querySelectorAll('.tab_contents div');
+    let active = '';
+
+    for(var i = 0; i < tabBtn.length; i++){
+      tabBtn[i].querySelector('.tab_btn').addEventListener('click', function(e){
+        e.preventDefault();
+        for(var j = 0; j < tabBtn.length; j++){
+          tabBtn[j].classList.remove('active');
+          tabContents[j].style.display = 'none';
+        }
+        this.parentNode.classList.add('active');
+        
+        active = this.getAttribute('href');
+        document.querySelector(active).style.display = 'block';
+      });
+    }
+  </script>
+</body>
+</html>
