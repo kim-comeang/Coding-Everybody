@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 책</title>
+</head>
+<body>
+<pre>
+== 프로퍼티 접근 에러
+
+프로퍼티 접근 표현식을 사용해도 항상 값을 얻을 수 있거나 값을 설정할 수 있는 것은 아니다.
+
+존재하지 않는 프로퍼티에는 접근해도 에러가 발생하지 않고, undefined로 평가된다.
+존재하지 않는 "객체의 프로퍼티"에 접근하려고 하면 에러가 발생한다.
+null과 undefined 값은 어떠한 프로퍼티도 갖지 않기 때문에
+이들 값에 프로퍼티로 접근을 시도하면 에러가 발생한다.
+
+
+== 프로퍼티 삭제하기
+delete 연산자는 객체의 프로퍼티를 삭제한다.
+이 연산자는 프로퍼티의 값을 지우는게 아니라 프로퍼티를 지운다. 
+delete 연산자는 상속받는 프로퍼티가 아닌 고유 프로퍼티만 지울수 있다. 
+
+- 상속받은 프로퍼티를 지우기 위해서는 해당 프로퍼티가 정의된 프로토타입 객체에서 지워야 한다.
+삭제에 성공하면 프로토타입 객체를 상속한  모든 객체가 영향을 받는다. 
+
+
+== 프로퍼티 검사하기
+in 연산자 왼쪽에는 프로퍼티 이름이 문자열로 와야하고 오른쪽에는 객체가 와야한다. 
+객체에 해당 프로퍼티가 존재하면 true가 반환된다.
+
+var o = { x: 1 };
+"x" in o;           // 객체 o에 고유 프로퍼티 x가 존재하므로 true를 반환
+"toString" in o;    // 객체 o에 상속받은 프로퍼티 toString이 있기 때문에 true를 반환
+
+ - hasOwnProperty() 하스 온 프러퍼티
+객체의 hasOwnProperty() 메서드는 주어진 이름의 프로퍼티가 객체에 존재하는지 검사한다.
+상속받은 프로퍼티는 false를 반환한다.
+
+var o = { x: 1 };
+o.hasOwnProperty("x");           // 객체 o에 고유 프로퍼티 x가 존재하므로 true를 반환
+o.hasOwnProperty("toString");    // toString은 상속받은 프로퍼티이기 때문에 false를 반환
+
+
+ - propertyIsEnumerable() 프로퍼티 이즈 노머러블
+ propertyIsEnumerable() 메서드는 hasOwnProperty() 보다 상세한 검사를 한다. 
+ undefined가 아니지만 확인할 때는 in 연산자 대신 논리 연산자 !==를 사용하는 편이 더 효과적이다.
+
+var o = { x: 1 };
+o.x !== undefined;      // true: 객체 o에 프로퍼티 x가 존재한다.
+o.y !== undefined;      // false: 객체 o에 프로퍼티 y가 존재하지 않는다.
+
+in 연산까지 사용하면 객체에 프로퍼티가 존재하지 않는 경우와
+객체에 프로퍼티가 존재하지만 값이 undefined인 경우를 구별할 수 있다.
+
+var o = { x: undefined };    // 프로퍼티가 분명히 존재하지만 값이 undefined다.
+o.x !== undefined;           // false: 프로퍼티가 존재하지만 값이 undefined다.
+o.y !== undefined;           // false: 프로퍼티가 존재하지 않는다. 하지만 값이 undefined다.
+"x" in o;                    // true: 프로퍼티가 존재한다.
+"y" in o;                    // false: 프로퍼티가 존재하지 않는다.
+
+
+== 프로퍼티 열거하기
+객체가 가진 모든 프로퍼티들을 순회하고 싶을 때는 보통 for/in 루프로 해결한다. 
+지정한 객체가 가진 고유 프로퍼티 또는 
+상속된 프로퍼티들 중 열거 가능한 프로퍼티들마다 for/in 루프의 몸체가 실행된다. 
+상속받은 내장 메서드는 열거할 수 없지만, 
+사용자가 임의로 추가한 프로퍼티들은 열거할 수 있다.
+(임의로 열거할 수 없도록 설정하는 함수를 사용할 수도 있다.)
+
+var o = { x:1, y:2, z:3 };              // 열거할 수 있는 3개의 고유 프로퍼티
+o.propertyIsEnumerable("toString");     // false: toString은 열거할 수 없는 프로퍼티
+for(p in o);                            // 객체 o의 모든 프로퍼티에 대해
+console.log(p);                         // 프로퍼티 이름을 출력. 결과는 x, y, z가 출력
+                                        // toString은 출력되지 않는다.
+
+for/in 루프 말고도 ECMAScript 5에는 프로퍼티 이름을 열거하는 두가지 함수가 더 있다.
+
+Object.keys()
+객체가 가진 고유 프로퍼티 중에 열거할 수 있는 프로퍼티 이름을 배열에 담아 반환한다.
+
+Object.getOwnPropertyNames()
+프로퍼티를 열거하는 함수다. 
+Object.keys()는 객체가 가진 ‘열거할 수 있는’ 고유 프로퍼티들을 배열에 담아 반환하지만, 
+Object.getOwnPropertyNames()는 해당 객체가 가진 모든 고유 프로퍼티의 이름을 배열로 반환한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
