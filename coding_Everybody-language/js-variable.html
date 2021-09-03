@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript - 변수</title>
+</head>
+<body>
+    <h1>변수(Variable - 배리어블)</h1>
+
+    <script>
+        console.log();
+
+        var a = 1;          // 변수 a 선언과 값 1 할당
+        console.log(a);     // 1
+
+        a = 10;             // 변수 a 에 값 10을 재할당
+        console.log(a);     // 10
+
+        a = 1;
+        b = 2;
+        console.log( a + b );   // 3
+        
+        a = 2;
+        console.log( a + b );   // 4
+
+        var first = 'coding';
+        console.log(first + ' everybody');
+        
+        var a = 'coding', b = ' everybody';
+        console.log( a + b );
+
+        // 변수를 왜 사용 하는가
+        console.log("변수를 왜 사용 하는가");
+        console.log( 100 + 10 );
+        console.log( (100 + 10) / 10 );
+        console.log( ((100 + 10) / 10) - 10 );
+        console.log( (((100 + 10) / 10) - 10) * 10 );
+        // 위 코드를 아래 처럼 바꿀수 있다.
+        console.log("위 코드를 아래 처럼 바꿀수 있다.");
+        var a = 100;        // 초기의 100이라는 값은 바뀔수 있다.
+        a = a + 10;
+        console.log( a );
+        a = a / 10;
+        console.log( a );
+        a = a - 10;
+        console.log( a );
+        a = a * 10;
+        console.log( a );
+
+
+    </script>
+</body>
+</html>
