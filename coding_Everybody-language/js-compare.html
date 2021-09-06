@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript - 비교</title>
+</head>
+<body>
+    <h1>비교</h1>
+    <p>a = 1 // a라는 변수(바뀌는 값)에 1이라는 값(상수: 바뀌지 않는 값)을 대입 한다. </p>
+    <p> = 대입 연산자: 좌항에 있는 값을 우항에 대입한다.</p>
+    <p> == 비교연산자 (<, >, >=, <=): boolean(true, false)값 반환</p>
+    
+    
+    <p>동등 연산자, 일치 연산자</p>
+
+    <p>== : 동등 연산자 (equal(동일한) operator)</p>
+    <script>
+        console.log("동등연산자");
+        console.log(1==1);              // true
+        console.log(1=="1");            // true
+        console.log(1==2);              // false
+        console.log("one"=="one");      // true
+    
+    </script>
+
+    <p>=== : 일치 연산자 (strict(엄격한) operator) 동등 연산자보다 일치연산자를 사용할것을 권장 한다.</p>
+    <script>
+        console.log("일치연산자");
+        console.log(1===1);         // true
+        console.log(1==="1");       // false
+        console.log(1===2);         // false
+    
+    </script>
+
+    <p>null(값이 없다), undefined(값이 정의되지 않았다) 특수한 형식의 데이터</p>
+
+    <script>
+        console.log("null, undefined");
+        console.log();
+        var a;
+        console.log(a);     // undefined: 의도하지 않은 상황
+        var a = null;
+        console.log(a);     // null: 값이 없다는것을 의도적으로 지정
+        
+        console.log(undefined == null);     // true
+        console.log(undefined === null);    // false
+    </script>
+
+    <p>boolean: true, false - 자바스크립트 데이터 타입중 하나</p>
+    <p>null, undefined 각각 데이터 타입중 하나</p>
+    <p>자바스크립트는 true를 숫자 1로 간주함, 1을 제외한 숫자를 false로 간주함</p>
+    <p>일치 연산자로 비교하면 false</p>
+    <script>
+        console.log("NaN은?");
+        console.log(NaN === NaN);   // flase
+        console.log();
+        
+    </script>
+    <a href="https://dorey.github.io/JavaScript-Equality-Table/">https://dorey.github.io/JavaScript-Equality-Table/</a>
+
+    <p>!= 느낌표는 부정을 의미</p>
+    <script>
+        console.log( "!=" );
+        console.log( 1 != 2 );      // true
+        console.log( 1 != 1 );      // false
+        console.log( 1 != "1" );    // flase
+    </script>
+
+    <p>!== 정확하게 같지 않다는 의미</p>
+    <script>
+        console.log( "!==" );
+        console.log( 1 !== 2 );      // true
+        console.log( 1 !== 1 );      // false
+        console.log( 1 !== "1" );    // true
+    </script>
+
+    <p>>= 좌항이 우항보다 크거나 같다. (<=는 반대 의미)</p>
+    <script>
+        console.log( ">=" );
+        console.log( 1 >= 2 );      // false
+        console.log( 1 >= 1 );      // true
+        console.log( 10 >= 1 );     // true
+        console.log( 10 >= "1" );   // true
+    </script>
+
+
+    <script>
+        console.log();
+        
+    </script>
+</body>
+</html>
