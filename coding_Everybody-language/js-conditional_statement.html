@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript - 조건문</title>
+</head>
+<body>
+    <h1>조건문 - conditional statement</h1>
+    
+    <h2>if</h2>
+    <p>boolean(true, false) 조건문과 땔수 없는 관계</p>
+    <script>
+        console.log();
+
+        if(true) {
+            console.log('1 : result : true');   // if(true)이기 때문에 실행 된다.
+        }
+        if(false) {
+            console.log('2 : result : true');   // if(false)이기 때문에 실행되지 않는다.
+        }
+        
+        console.log("true일 경우");
+        if(true) {
+            console.log(1);
+            console.log(2);
+            console.log(3);
+            console.log(4);
+        }
+        console.log(5 + "는 if문 밖");
+
+        console.log("false일 경우");
+        if(false) {
+            console.log(1);
+            console.log(2);
+            console.log(3);
+            console.log(4);
+        }
+        console.log(5 + "는 if문 밖");
+    </script>
+
+    <h2>else</h2>
+
+    <script>
+        console.log();
+
+        if(true) {  // 참이면
+            console.log("if - true, true라서 여기가 실행");
+        } else {    // 거짓이면
+            console.log("else");
+        }
+
+        if(false) { // 거짓이면
+            console.log("if - false");
+        } else {    // 참이면
+            console.log("else, false라서 여기가 실행");
+        }
+    </script>
+
+
+    <h2>else if</h2>
+
+    <script>
+        console.log("else if 1");
+
+        if(false) {             // false라 넘어감
+            console.log(1);
+        } else if(true) {       // 2가 출력, 여기서 정지
+            console.log(2);
+        } else if(true) {
+            console.log(3);
+        } else {
+            console.log(4);
+        }
+
+        console.log("else if 2");
+        if(false) {             // false라 넘어감
+            console.log(1);
+        } else if(false) {      // false라 넘어감
+            console.log(2);
+        } else if(true) {       // 3이 출력, 여기서 정지
+            console.log(3);
+        } else {
+            console.log(4);
+        }
+
+        console.log("else if 3");
+        if(false) {             // false라 넘어감
+            console.log(1);
+        } else if(false) {      // false라 넘어감
+            console.log(2);
+        } else if(false) {      // false라 넘어감
+            console.log(3);
+        } else {                // 4가 출력
+            console.log(4);
+        }
+    </script>
+
+    <h2>변수와 비교연산자</h2>
+
+    <script>
+        console.log("a = 1");
+        
+        a = 1;
+        if(a === 1) {       // true와 같다.
+            console.log(1);
+        }
+
+        // alert(prompt('당신의 나이는?'));
+        // alert(prompt('당신의 나이는?')*2);
+
+        // var id = prompt('아이디를 입력해주세요.');
+        // if(id == 'going') {
+        //     alert('아이디가 일치 합니다.');
+        //     var password = prompt('비밀번호를 입력해 주세요.');
+        //     if( password == '1111') {
+        //         alert('로그인 했습니다. ' + id + "님 반갑습니다.");
+        //     } else {
+        //         alert('비밀번호가 틀렸습니다.');
+        //     };
+        // } else {
+        //     alert('아이디가 일치 하지 않습니다.');
+        // };
+    </script>
+
+    <h2>논리 연산자</h2>
+    <p>&& and (앤터센드)</p>
+
+    <script>
+        console.log("&& - AND 논리 연산자");
+
+        if(true && true) {
+            console.log(1);
+        }
+        if(true && false) {
+            console.log(2);
+        }
+        if(false && true) {
+            console.log(3);
+        }
+        if(false && false) {
+            console.log(4);
+        }
+        
+
+        // var id = prompt('아이디를 입력해주세요.');
+        // var password = prompt('비밀번호를 입력해 주세요.');
+        // if(id == 'going' && password == '1111') {       // && 여러개를 사용할 수 있다.
+        //     alert('로그인 했습니다. ' + id + "님 반갑습니다.");
+        // } else {
+        //     alert('아이디가 일치 하지 않습니다.');
+        // };
+    </script>
+
+
+    <h2>|| or 연산자</h2>
+
+    <p>우항 좌항 중 하나만 참이라도 실행</p>
+
+    <script>
+        // console.log("|| - or 연산자");
+        // if(true || true) {
+        //     console.log(1);
+        // }
+        // if(true || false) {
+        //     console.log(2);
+        // }
+        // if(false || true) {
+        //     console.log(3);
+        // }
+        // if(false || false) {
+        //     console.log(4);
+        // }
+
+        // var id = prompt('아이디를 입력해주세요.');
+        // var password = prompt('비밀번호를 입력해 주세요.');
+        // if((id === 'going' || id === 'aaa' || id === 'bbb') && password == '1111') {
+        //     // 괄호가 우선 실행                             && 다음 
+        //     alert('인증 했습니다.');
+        // } else {
+        //     alert('인증에 실패 했습니다.');
+        // };
+    </script>
+    
+    <h2>!</h2>
+
+    <p>not의 의미 - boolean 값을 반대 값으로 역전 시킨다.</p>
+
+    <script>
+        console.log("! - not");
+        if(!true && !true) {
+            console.log(1);
+        }
+        if(!true && !false) {
+            console.log(2);
+        }
+        if(!false && !true) {
+            console.log(3);
+        }
+        if(!false && !false) {
+            console.log(4);
+        }
+    </script>
+
+    <h2>boolean의 대체제</h2>
+    <p>if 안에 꼭 boolean 만 들어갈 필요는 없다.</p>
+    <script>
+        console.log("boolean의 대체제");
+        console.log("빈 문자열은 false로 간주");
+        if('') {
+            console.log("빈 문자열");
+        }
+        console.log("문자열에 aa");
+        if('aa') {
+            console.log("aa 결과");
+        }
+
+        console.log("undefined false로 간주");
+        if(undefined) {
+            console.log("undefined");
+        };
+    </script>
+
+</body>
+</html>
