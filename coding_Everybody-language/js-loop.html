@@ -41,7 +41,38 @@ i++;    // 기존의 값부터 사용
     </pre>
     <script>
         for (var i = 0; i < 10; i++) {
+            document.write((i+1) + " Hello World. <br />");
+        };
+    </script>
+
+    <h2>반복문의 제어</h2>
+    <p>break - 반복문 종료</p>
+    <p>continue - 그 순간 종료</p>
+    <pre>
+    반복문 안에 조건문이, 조건문 안에 반복문이 들어갈수 있다.
+    </pre>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            if (i ===5) {
+                // break;
+                continue;
+            };
             document.write(i + " Hello World. <br />");
+
+        };
+    </script>
+
+    <h2>반복문의 중첩</h2>
+    <p></p>
+    <p></p>
+    <pre>
+
+    </pre>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                document.write(" Hello World." + i + j +  " <br />");
+            }
         };
     </script>
 </body>
