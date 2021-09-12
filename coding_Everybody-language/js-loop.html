@@ -66,12 +66,24 @@ i++;    // 기존의 값부터 사용
     <p></p>
     <p></p>
     <pre>
-
+i 반복문이 실행 되면 j 반복문이 실행된다.
+1 반복문 1회당 j 반복문 10회 실행
+i 실행 = 0
+j 실행 = 0 ~ 9 > 총 10회
+= 01 ~ 09
+.
+.
+.
+.
+.
+i 실행 = 7
+j 실행 = 0 ~ 9 > 총 10회
+= 70 ~ 79
     </pre>
     <script>
         for (var i = 0; i < 10; i++) {
             for (var j = 0; j < 10; j++) {
-                document.write(" Hello World." + i + j +  " <br />");
+                document.write( i + j +" Hello World." + i + j + " <br />");
             }
         };
     </script>
