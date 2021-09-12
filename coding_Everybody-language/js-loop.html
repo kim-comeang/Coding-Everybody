@@ -7,11 +7,42 @@
     <title>javascript - 반복문</title>
 </head>
 <body>
-    <h1>반복문 - loop ()</h1>
-    <script>
-        console.log();
-        
+    <h1>반복문 - loop (iterate)</h1>
+    <p>while과 for가 있다.</p>
+    <h2>while 문</h2>
+    <pre>
+while (조건) { true에서 false가 될때까지
+    반복해서 실행할 코드
+};
 
+- 무한루프
+while (true) {
+    document.write("Hello World. <br />");
+}
+    </pre>
+    <script>
+        // console.log();
+        var i = 0;
+        while (i < 10) {
+            document.write(i + " Hello World. <br />");
+            i = i + 1;
+        }
+    </script>
+
+    <h2>for 문</h2>
+    <pre>
+초기화, 반복 조건(불린 값), i++(+1)
+i의 값이 10보다 작을때까지 실행
+
+i는 iterate의 앞자를 따서 관용적으로 사용한다.
+i = i + 1;
+i++;    // 기존의 값부터 사용
+++i;    // 기존의 값을 증가시키면서 사용
+    </pre>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            document.write(i + " Hello World. <br />");
+        };
     </script>
 </body>
 </html>
