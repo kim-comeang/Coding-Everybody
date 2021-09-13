@@ -8,9 +8,29 @@
 </head>
 <body>
     <h1>함수 - function</h1>
-    <p>하나의 로직을 재실행 할 수 있도록 하는 것으로 코드의 재사용성을 높여준다.</p>
-    <script>
+    <p>하나의 로직을 재실행 할 수 있도록 하는 것으로 "코드의 재사용성"을 높여준다.</p>
 
+    <pre>
+function 함수명 ([인자...[,인자]]){
+    코드
+
+    return 반환값
+}
+함수명();   // 함수 호출
+    </pre>
+    <script>
+        // function numbering () {
+        //     document.write(1);
+        // };
+        // numbering();
+        function numbering () {
+            i = 0;
+            while(i < 10) {
+                document.write(i);
+                i += 1;
+            };
+        };
+        numbering();
     </script>
 </body>
 </html>
