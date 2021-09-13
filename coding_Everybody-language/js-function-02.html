@@ -10,9 +10,26 @@
     <h1>함수의 효용</h1>
 
     <pre>
+함수의 핵심은 재사용성이다. (유지보수의 용이)
+다른 곳에서 사용할수 있게 좋은 함수(부품)을 만드는 것.
+
+- 프로그램의 핵심
+// 재사용성
+// 유지보수의 용이성
+// 가독성
+
     </pre>
     <script>
-        
+        function numbering(){
+            var i = 0;
+            while(i < 20){
+                document.write(i + "<br>");
+                i += 1;
+            };
+        }
+        for(var i = 0; i < 100; i++){
+            numbering();
+        }
     </script>
 </body>
 </html>
