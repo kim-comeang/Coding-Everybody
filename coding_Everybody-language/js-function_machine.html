@@ -4,16 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>javascript - 함수의 입력</title>
+    <title>javascript - 함수의 입력, 출력</title>
 </head>
 <body>
-    <h1>함수의 입력</h1>
+    <h1>함수의 입력, 출력</h1>
+    <h2>함수의 입력</h2>
     <pre>
 function - 기능, 작용 (함수)
 함수 = 상자
+
+return이 나오면 함수를 종료
+return 'hello';
+세미콜론 전까지 있는 값을 함수의 출력값으로 반환한다.
     </pre>
     <script>
+        function get_number1() {
+            return 'going';
+        }
+        function get_number2() {
+            return 'hello';
+        } 
+        document.write(get_number1() + "<br>");
+        document.write(get_number2() + "<br>");
+
         
+        function get_number3() {
+            return 'hello0';
+            return 'hello1';
+            return 'hello2';
+            return 'hello3';
+            return 'hello4';
+        }
+        document.write(get_number3() + "<br>");
+ 
+    </script>
+
+    <h2>함수의 출력</h2>
+    <pre>
+              함수    번수
+function get_argument(arg) {
+    return arg;
+}
+// arg 변수 함수 괄호안에 1,2 를 넣어 변수에 담아 출력. 
+get_argument(1);    // 함수 실해시 1;
+get_argument(2);    // 함수 실해시 2;
+
+위 변수를 매개변수,파라미터(parameter) 라고 부른다.
+함수 괄호안에 값을 인자(argument) 라고 부른다.
+
+엄격하게 나누면 값 자체는 인자, 그 값을 담는 변수는 매개변수, 파라미터라고 부른다.
+    </pre>
+    <script>
+        function get_argument(arg) {
+            return arg;
+        }
+        document.write(get_argument(1) + "<br>");
+        document.write(get_argument(2) + "<br>");
+    </script>
+    
+    <h2>복수 인자</h2>
+    <pre>
+리턴값은 하나만 가질수 있다는 한계가 있다.
+    </pre>
+    <script>
+        function get_arguments(arg1, arg2) {
+            return arg1 + arg2;
+        }
+        document.write(get_arguments(1, 2) + "<br>");
+        document.write(get_arguments(20, 30) + "<br>");
     </script>
 </body>
 </html>
