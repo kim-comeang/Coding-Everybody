@@ -7,9 +7,41 @@
     <title>javascript - 객체</title>
 </head>
 <body>
-    <h1>객체</h1>
-    <script>
+    <h1>객체 - Object</h1>
+    <pre>
+객체 지향
+배열과 객체는 (데이터를 담아내는 그릇)유사하다.
+눈에 보이는 차이점으로는 객체는 인덱스의 값을 직접 원하는 데이터로 수정할 수 있다.
 
+지금까지 살펴본 배열은 아이템에 대한 식별자로 숫자를 사용했다.
+데이터가 추가되면 배열 전체에서 중복되지 않은 인덱스가 자동으로 만들어져
+추가된 데이터에 대한 식별자가 된다.
+이 인덱스를 이용해서 데이터를 가져오게 되는 것이다.
+만약 인덱스로 문자를 사용하고 싶다면 객체(dictionary)를 사용해야 한다.
+다른 언더에서는 연관배열(associative array) 또는 맵(map),
+딕셔너리(Dictionary)라는 데이터 타입이 객체에 해당한다.
+
+배열 = []; (대괄호)
+객체 = {}; (중괄호)
+    </pre>
+    <script>
+        // 방법 1
+        var grades = {'egoing': 10, 'k228802': 6, 'ego111': 80};
+        document.write(grades + " 1 ");
+        document.write("<br>");
+        // console.log(grades + " 2 ");
+
+        grades['egoing'];
+        document.write(grades['egoing'] + " 3 ");
+        document.write("<br>");
+
+        // 방법 2
+        var grades2 = {};
+        grades2['ee'] = 10;
+        grades2['aa'] = 1;
+        grades2['ii'] = 20;
+        document.write(grades2);
+        console.log(grades2);
     </script>
 </body>
 </html>
