@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript - 객체와 반복문의 조우</title>
+</head>
+<body>
+    <h1>객체와 반복문</h1>
+    <pre>
+배열은 저장된 데이터들이 순서가 있다.
+객체에 저장된 값은 순서가 없다. key와 value가 있다.
+
+배열에 있는 값을 가져올때는 for/in 문이라는것을 이용한다.
+
+var grades = {'a': 10, 'b': 6, 'c': 80};
+grades 라는 각각 숫자(점수)를 가지고 있는 객체를 만들었다.
+
+for(key in grades) {
+1. key값이 들어가는데 이것은 약속이다.
+2. in을 중심으로 앞에 key를, 뒤에 객체를 넣는다.
+3. grades라는 변수가 담고있는 값들을 반복문이 실행될때마다 하나씩 가져와서 key에 담는다. (key값을)
+
+    document.write("key: " + key + " value: " + grades[key] + "<br>");
+};
+    </pre>
+    <script>
+        var arr = ['a', 'b', 'c'];
+        document.write(arr + "<br>");
+
+        for(var i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        };
+
+        var grades = {'a': 10, 'b': 6, 'c': 80};
+        document.write(grades + " 123<br>");
+        for(key in grades) {
+            document.write("key: " + key + " value: " + grades[key] + " 123123<br>");
+        };
+        document.write(grades[key] + " 123123123<br>");
+    </script>
+
+    <ul>
+        <script>
+            var gradesLi = {'a': 10, 'b': 6, 'c': 80};
+            for(key in gradesLi) {
+                document.write("<li>key: " + key + " value: " + gradesLi[key] + " </li>");
+            };
+
+            var arr = ['aa', 'bb', 'cc'];
+            for(var name in arr) {
+                document.write("<li>" + name + "</li>");
+                document.write("<li>" + arr[name] + "</li>");
+            };
+        </script>
+    </ul>
+</body>
+</html>
