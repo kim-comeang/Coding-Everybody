@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript - 반복문5</title>
+</head>
+<body>
+    <h1>반복문 - loop (iterate)</h1>
+    <pre>
+조건문에 사용할 수 있는 데이터는 불린만 되는건 아니다. 
+관습적인 이유로 0는 false 0이 아닌 값은 true로 간주된다.
+
+    </pre>
+    <script>
+        // 2를 출력한다.
+        if(0){
+            // alert(1)
+            document.write(1);
+        }
+        if(1){
+            // alert(2)
+            document.write(2);
+        }
+    </script>
+
+    <h1>false로 간주되는 데이터 형</h1>
+    <pre>
+    </pre>
+    <script>
+        if(!''){
+            // alert('빈 문자열')
+            document.write('빈 문자열' + "<br>");
+        }
+        if(!undefined){
+            // alert('undefined');
+            document.write('undefined' + "<br>");
+        }
+        var a;
+        if(!a){
+            // alert('값이 할당되지 않은 변수'); 
+            document.write('값이 할당되지 않은 변수' + "<br>");
+        }
+        if(!null){
+            // alert('null');
+            document.write('null' + "<br>");
+        }
+        if(!NaN){
+            // alert('NaN');
+            document.write('NaN' + "<br>");
+        }
+    </script> 
+</body>
+</html>
