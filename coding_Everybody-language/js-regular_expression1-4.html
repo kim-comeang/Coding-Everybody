@@ -64,6 +64,44 @@ cnosole.log(pattern.test('bcdefg')); // false
 
         console.log(pattern.test('abcdef')); // true
         cnosole.log(pattern.test('bcdefg')); // false
-    </script> 
+    </script>
+
+    <pre>
+문자열 객체의 몇몇 메소드는 정규표현식을 사용할 수 있다. 
+
+String.match()
+RegExp.exec()와 비슷하다.
+
+console.log('abcdef'.match(pattern)); // ["a"]
+console.log('bcdefg'.match(pattern)); // null
+String.replace()
+문자열에서 패턴을 검색해서 이를 변경한 후에 변경된 값을 리턴한다.
+
+console.log('abcdef'.replace(pattern, 'A'));  // Abcdef
+    </pre>
+    <script>
+        // 문자열 객체의 몇몇 메소드는 정규표현식을 사용할 수 있다. 
+
+        String.match()
+        // RegExp.exec()와 비슷하다.
+
+        console.log('abcdef'.match(pattern)); // ["a"]
+        console.log('bcdefg'.match(pattern)); // null
+        String.replace()
+        // 문자열에서 패턴을 검색해서 이를 변경한 후에 변경된 값을 리턴한다.
+
+        console.log('abcdef'.replace(pattern, 'A'));  // Abcdef
+    </script>
+
+
+
+
+
+    <pre>
+
+    </pre>
+    <script>
+
+    </script>
 </body>
 </html>

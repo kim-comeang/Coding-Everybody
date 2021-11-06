@@ -8,12 +8,87 @@
 </head>
 <body>
     <h1>정규표현식(regular expression)</h1>
+<pre>
+정규표현식 패턴을 만들 때 옵션을 설정할 수 있고, 옵션에 따라서 검출되는 데이터가 달라진다.
 
-    <pre>
+i를 붙이면 대소문자를 구분하지 않는다.
 
-    </pre>
-    <script>
+var xi = /a/;
+console.log("Abcde".match(xi)); // null
+var oi = /a/i;
+console.log("Abcde".match(oi)); // ["A"];
 
-    </script>
+g를 붙이면 검색된 모든 결과를 리턴한다.
+
+var xg = /a/;
+console.log("abcdea".match(xg));
+var og = /a/g;
+console.log("abcdea".match(og));
+</pre>
+<script>
+var pattern = /a/;
+var pattern = new RegExp('a');
+
+var xi = /a/;
+console.log("Abcde".match(xi)); // null
+var oi = /a/i;
+console.log("Abcde".match(oi)); // ["A"];
+
+var xg = /a/;
+console.log("abcdea".match(xg));
+var og = /a/g;
+console.log("abcdea".match(og));
+</script>
+<pre>
+괄호안의 패턴은 마치 변수처럼 재사용할 수 있다.
+이 때 기호 $를 사용하는데 아래 코드는 coding과 everybody의 순서를 역전시킨다.
+
+var pattern = /(\w+)\s(\w+)/;
+var str = "coding everybody";
+var result = str.replace(pattern, "$2, $1");
+console.log(result);
+
+<script>
+
+var pattern = /(\w+)\s(\w+)/;
+var str = "coding everybody";
+var result = str.replace(pattern, "$2, $1");
+console.log(result);
+</script>
+- 치환
+아래 코드는 본문 중의 URL을 링크 html 태그로 교체한다. 
+
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+var result = content.replace(urlPattern, function(url){
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
+
+- 결과
+생활코딩 : <a href="http://opentutorials.org/course/1">http://opentutorials.o
+</pre>
+<script>
+var urlPattern = /\b(?:https?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
+var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
+var result = content.replace(urlPattern, function(url){
+    return '<a href="'+url+'">'+url+'</a>';
+});
+console.log(result);
+</script>
+
+
+
+
+
+
+
+
+<pre>
+
+</pre>
+<script>
+
+</script>
 </body>
 </html>
