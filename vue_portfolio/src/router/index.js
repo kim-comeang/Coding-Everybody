@@ -10,6 +10,7 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  
   {
     path: '/about',
     name: 'About',
@@ -19,7 +20,14 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ '../views/About.vue')
     }
-  }
+  },
+  
+  {
+    path: 'menu/AllMenuPage',
+    name: 'AllMenuPage',
+    component: Home
+  },
+
 ]
 
 const router = new VueRouter({
