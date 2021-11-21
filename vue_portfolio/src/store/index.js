@@ -1,17 +1,30 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from './mutations';
-import actions from './actions';
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		menus: [],
-    	},
+		news: [],
+	},
 	getters: {
-		menuItems(state) {
-			return state.menus;
-		},
-        },
-    	mutations,
-    	actions,
+
+	},
+	mutations: {
+		SET_NEWS(state, news) {
+			state.news = news
+		}
+	},
+	actions: {
+		FETCH_NEWS() {
+			fetchNewsList()
+			.then(res => {
+				console.log(res.data);
+				context.commit('SET_NEWS', res.data);
+			})
+			.catch(error => {
+				console.log(error)
+			})
+		}
+	},
 });
