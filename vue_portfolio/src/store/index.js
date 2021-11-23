@@ -16,11 +16,10 @@ export default new Vuex.Store({
 		}
 	},
 	actions: {
-		FETCH_NEWS() {
+		FETCH_NEWS({ commit }) {
 			fetchNewsList()
 			.then(res => {
-				console.log(res.data);
-				context.commit('SET_NEWS', res.data);
+				commit('SET_NEWS', res.data);
 			})
 			.catch(error => {
 				console.log(error)
